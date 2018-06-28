@@ -1,0 +1,110 @@
+cpssdk package
+==============
+
+Submodules
+----------
+
+cpssdk.cpsfeatures module
+-------------------------
+
+.. automodule:: cpssdk.cpsfeatures
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cpssdk.cpsfilter module
+-----------------------
+
+.. automodule:: cpssdk.cpsfilter
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cpssdk.cpsos module
+-------------------
+
+.. automodule:: cpssdk.cpsos
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cpssdk.cpspandas\-test module
+-----------------------------
+
+.. automodule:: cpssdk.cpspandas-test
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cpssdk.cpspandas module
+-----------------------
+
+.. automodule:: cpssdk.cpspandas
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cpssdk.cpsplot\-test module
+---------------------------
+
+.. automodule:: cpssdk.cpsplot-test
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cpssdk.cpsplot module
+---------------------
+
+.. automodule:: cpssdk.cpsplot
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cpssdk.cpsraster module
+-----------------------
+
+.. automodule:: cpssdk.cpsraster
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cpssdk.cpsspatio\-test module
+-----------------------------
+
+.. automodule:: cpssdk.cpsspatio-test
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cpssdk.cpsspatio module
+-----------------------
+
+.. automodule:: cpssdk.cpsspatio
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cpssdk.cpsspatio\_interval module
+---------------------------------
+
+.. automodule:: cpssdk.cpsspatio_interval
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cpssdk.cpstime module
+---------------------
+
+.. automodule:: cpssdk.cpstime
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: cpssdk
+    :members:
+    :undoc-members:
+    :show-inheritance:
