@@ -209,24 +209,59 @@ outEdge: out edge is a collection of geo arrays and it is a key of simple json f
 <dt id="cpssdk.cpsspatio.CPSCrop">
 <em class="property">class </em><code class="descclassname">cpssdk.cpsspatio.</code><code class="descname">CPSCrop</code><a class="headerlink" href="#cpssdk.cpsspatio.CPSCrop" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
+<dt id="cpssdk.cpsspatio.CPSCrop.isInCircle">
+<code class="descname">isInCircle</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSCrop.isInCircle" title="Permalink to this definition">¶</a></dt>
+<dd><p>return if a point (x,y) is in the predefined polygon area
+:param x: x/longitude value
+:param y: y/latitude value
+:return:  true if the point is in the area and false if not</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="cpssdk.cpsspatio.CPSCrop.isInPolygon">
 <code class="descname">isInPolygon</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSCrop.isInPolygon" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>return if a point (x,y) is in the predefined polygon area
+:param x:  x/longitude value
+:param y:  y/latitude value
+:return: true if the point is in the area and false if not</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cpssdk.cpsspatio.CPSCrop.isInRectangle">
 <code class="descname">isInRectangle</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSCrop.isInRectangle" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>return if a point (x,y) is in the predefined rectangle area
+:param x:  x/longitude value
+:param y:  y/latitude value
+:return: true if the point is in the area and false if not</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cpssdk.cpsspatio.CPSCrop.setCircleBoundary">
+<code class="descname">setCircleBoundary</code><span class="sig-paren">(</span><em>center</em>, <em>radius</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSCrop.setCircleBoundary" title="Permalink to this definition">¶</a></dt>
+<dd><p>set a circle area with coordincates for crop
+:param center: center of the circle, e.g., gps center, [114.43,22.01]
+:param radius: radious of the circle, in km
+:return: None</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cpssdk.cpsspatio.CPSCrop.setPolygonBoundary">
-<code class="descname">setPolygonBoundary</code><span class="sig-paren">(</span><em>geo_array</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSCrop.setPolygonBoundary" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">setPolygonBoundary</code><span class="sig-paren">(</span><em>polygon_list</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSCrop.setPolygonBoundary" title="Permalink to this definition">¶</a></dt>
+<dd><p>set a polygon area with coordincates for crop
+:param polygon_list: a coordinate array to define the polygon, example [[122.3,21.2],[122.4,21.3],[122.5,21.4]]
+:return: None</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cpssdk.cpsspatio.CPSCrop.setRectangle">
 <code class="descname">setRectangle</code><span class="sig-paren">(</span><em>minx</em>, <em>maxx</em>, <em>miny</em>, <em>maxy</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSCrop.setRectangle" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>set a rectangle area with coordincates for crop
+:param minx: minimum value on x/longitude axis of the rectrangle
+:param maxx: maximun value on x/longitude axis of the rectrangle
+:param miny: minimum value on y/latitude axis of the rectrangle
+:param maxy: maximum value on y/latitude axis of the rectrangle
+:return: None</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cpssdk.cpsspatio.CPSCrop.setShenzhenPolygonBoundary">
@@ -246,7 +281,19 @@ outEdge: out edge is a collection of geo arrays and it is a key of simple json f
 <dd><dl class="method">
 <dt id="cpssdk.cpsspatio.CPSDistance.GPSDist">
 <code class="descname">GPSDist</code><span class="sig-paren">(</span><em>p1</em>, <em>p2</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSDistance.GPSDist" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>calculate the distance between two GPS points
+:param p1: gps point
+:param p2: gps point
+:return: distance in km</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cpssdk.cpsspatio.CPSDistance.GPSPolygonArea">
+<code class="descname">GPSPolygonArea</code><span class="sig-paren">(</span><em>polygon</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSDistance.GPSPolygonArea" title="Permalink to this definition">¶</a></dt>
+<dd><p>a shapely polygon object or a list containing coordincates of a polygon
+:param polygon: array contains vertex of the polygon
+:return: area in km^2</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -256,16 +303,23 @@ outEdge: out edge is a collection of geo arrays and it is a key of simple json f
 <dd><dl class="method">
 <dt id="cpssdk.cpsspatio.CPSSpatio.countInGrid">
 <code class="descname">countInGrid</code><span class="sig-paren">(</span><em>X</em>, <em>Y</em>, <em>Z=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSSpatio.countInGrid" title="Permalink to this definition">¶</a></dt>
-<dd><p>X: longitude or x 
-Y: latitude or y
-Z: None or number on locatio X and Y
-return: the density in each grid</p>
+<dd><p>count density in grids
+:param X: longitude or x, float or int
+:param Y: latitude or y, float or int
+:param Z: None or count at GPS location X and Y
+:return: the density in each grid, list, a[grid_x][grid_y] = density</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cpssdk.cpsspatio.CPSSpatio.cutPointByBoundary">
 <code class="descname">cutPointByBoundary</code><span class="sig-paren">(</span><em>locations</em>, <em>values</em>, <em>boundaryList</em>, <em>defaultvalue=-999</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSSpatio.cutPointByBoundary" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>set the point outside a polygon as a specific value
+:param locations: a two dimension array, index of the array is the grid index, one element of the array is a GPS location
+:param values: a two dimension array, store a value in the location, e.g., number of passenger in a station
+:param boundaryList: a list, polygon coordinate list
+:param defaultvalue: the value to be set outside the polygon, default is -999
+:return: values after the change</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cpssdk.cpsspatio.CPSSpatio.findCandidatesInGrids">
@@ -294,12 +348,18 @@ return: the density in each grid</p>
 <dl class="method">
 <dt id="cpssdk.cpsspatio.CPSSpatio.geoArrayFromPolygonString">
 <code class="descname">geoArrayFromPolygonString</code><span class="sig-paren">(</span><em>polygonString</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSSpatio.geoArrayFromPolygonString" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>create a geoArray from polygon string, which is a printout of polygon in Shapely package
+:param polygonString: print out of shapely polygon, e.g., POLYGON (( 114.23 22.14, 114.32 22.15, 114.35, 22.12))
+:return: a Shapely Polygon object</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cpssdk.cpsspatio.CPSSpatio.getRectBoundaryFromRegions">
 <code class="descname">getRectBoundaryFromRegions</code><span class="sig-paren">(</span><em>regions</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSSpatio.getRectBoundaryFromRegions" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>find minimum and maximum value on x and y axis in region list
+:param regions:
+:return:</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cpssdk.cpsspatio.CPSSpatio.gpsPolygonArea">
@@ -311,7 +371,10 @@ return: area in km^2</p>
 <dl class="method">
 <dt id="cpssdk.cpsspatio.CPSSpatio.init">
 <code class="descname">init</code><span class="sig-paren">(</span><em>out_edge_regions=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSSpatio.init" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>initialize CPSSpatio with a polygon regions
+:param out_edge_regions: out_edge attribute in simple json format
+:return: None</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cpssdk.cpsspatio.CPSSpatio.initRectToPolygonMapping">
@@ -321,12 +384,22 @@ return: area in km^2</p>
 <dl class="method">
 <dt id="cpssdk.cpsspatio.CPSSpatio.initSpatioRectBoundary">
 <code class="descname">initSpatioRectBoundary</code><span class="sig-paren">(</span><em>minx</em>, <em>maxx</em>, <em>miny</em>, <em>maxy</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSSpatio.initSpatioRectBoundary" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>set a rectangle area, which is always the minimum rectangle containing the polygon region partition
+set grid partition based on the rectangle area
+:param minx: minimum value on x/longitude axis
+:param maxx: maximum value on x/longitude axis
+:param miny: minimum value on y/latitude axis
+:param maxy: maximum value on y/latitude axis
+:return: None</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cpssdk.cpsspatio.CPSSpatio.initSpatioRegion">
 <code class="descname">initSpatioRegion</code><span class="sig-paren">(</span><em>out_edge</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSSpatio.initSpatioRegion" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>set polygon and geo id by in array
+:param out_edge: the out edge arribute in simple json
+:return: None</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cpssdk.cpsspatio.CPSSpatio.locationOfGrids">
@@ -336,7 +409,10 @@ return: area in km^2</p>
 <dl class="method">
 <dt id="cpssdk.cpsspatio.CPSSpatio.minmaxGeoJson">
 <code class="descname">minmaxGeoJson</code><span class="sig-paren">(</span><em>geojson_path</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSSpatio.minmaxGeoJson" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>find the minimum and maximum values on x and y axis in a geo json object
+:param geojson_path: file path of the geo json file
+:return: an array with min and max value on both x and y axis</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cpssdk.cpsspatio.CPSSpatio.pnpoly">
@@ -361,13 +437,19 @@ return: area in km^2</p>
 <dl class="method">
 <dt id="cpssdk.cpsspatio.CPSSpatio.simpleJsonToGeoPandas">
 <code class="descname">simpleJsonToGeoPandas</code><span class="sig-paren">(</span><em>out_edge</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSSpatio.simpleJsonToGeoPandas" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>covert a simple json file to GeoPandas
+:param out_edge: the out_edge attribute in the simple json
+:return: the geopandas data frame object</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cpssdk.cpsspatio.CPSSpatio.simpleJsonToIdJson">
 <code class="descname">simpleJsonToIdJson</code><span class="sig-paren">(</span><em>out_edge</em>, <em>key='geo_id'</em>, <em>value='geo_array'</em><span class="sig-paren">)</span><a class="headerlink" href="#cpssdk.cpsspatio.CPSSpatio.simpleJsonToIdJson" title="Permalink to this definition">¶</a></dt>
-<dd><p>out_edge: array of geoid and geo array for polygon 
-return: idJson mapping id to geoarray</p>
+<dd><p>create a mapping json from geo id to an attribute
+:param out_edge: array of geoid and geo array for polygon
+:param key: the key of the mapping, default is geo_id in simple json
+:param value: the value of the mapping, default is geo_array in simple json
+:return:  a json file mapping id to geoarray</p>
 </dd></dl>
 
 </dd></dl>
